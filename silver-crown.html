@@ -21,14 +21,13 @@
   <meta name="twitter:description" content="История Silver Crown: состав, ранние записи, коллаборации и резонанс в Павлограде." />
   <meta name="twitter:image" content="https://taymay-official.vercel.app/banner.jpg" />
 
-  <!-- Favicons (Google/SEO-friendly) -->
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="shortcut icon" href="/favicon-32x32.png" type="image/png">
   <meta name="theme-color" content="#0a0a0c">
 
   <!-- Fonts -->
@@ -45,7 +44,6 @@
       --bg2:#0f0f13;
       --text:#f4f4f6;
       --muted:rgba(244,244,246,.72);
-      --line:rgba(255,255,255,.12);
       --glass:rgba(18,18,22,.62);
       --glass2:rgba(18,18,22,.42);
       --orange:#FF4500;
@@ -53,6 +51,9 @@
       --shadow: 0 18px 70px rgba(0,0,0,.45);
       --radius: 18px;
       --max: 1180px;
+
+      --graffiti-w: 320px;
+      --graffiti-opacity: 0.20;
     }
 
     *{box-sizing:border-box}
@@ -82,43 +83,29 @@
     }
 
     a{color:inherit;text-decoration:none}
-    .wrap{position:relative; z-index:1;}
+    .wrap{position:relative; z-index:2;} /* контент выше граффити */
 
-    /* Graffiti side tags */
-    .graffiti-wall::before,
-    .graffiti-wall::after{
-      content:"";
-      position:fixed;
-      top:0;
-      bottom:0;
-      width:min(18vw, 240px);
-      pointer-events:none;
-      z-index:0;
-      opacity:.20;
+    /* ✅ Side graffiti images (separate files) */
+    .side-graffiti{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1; /* под контентом, над фоном */
+    }
+    .side-graffiti img{
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: var(--graffiti-w);
+      max-width: 30vw;
+      height: auto;
+      opacity: var(--graffiti-opacity);
+      filter: saturate(1.1) contrast(1.05);
       mix-blend-mode: screen;
-      filter: blur(.2px);
+      user-select: none;
     }
-    .graffiti-wall::before{
-      left:0;
-      background:
-        radial-gradient(160px 240px at 40% 20%, rgba(255,69,0,.10), transparent 70%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='1200'%3E%3Cstyle%3E.t%7Bfont-family:'Permanent%20Marker',cursive;font-size:54px;fill:rgba(255,255,255,0.20);%7D.o%7Bfill:rgba(255,69,0,0.18);%7D%3C/style%3E%3Ctext x='16' y='140' class='t'%3ESilver%20Crown%3C/text%3E%3Ctext x='16' y='260' class='t o'%3EPavlograd%3C/text%3E%3Ctext x='16' y='380' class='t'%3E2004%E2%80%932006%3C/text%3E%3Ctext x='16' y='620' class='t o'%3ESilver%20Crown%3C/text%3E%3Ctext x='16' y='740' class='t'%3EPavlograd%3C/text%3E%3Ctext x='16' y='860' class='t o'%3E2004%E2%80%932006%3C/text%3E%3C/svg%3E");
-      background-repeat:no-repeat;
-      background-position:center;
-      background-size:cover;
-      mask-image: linear-gradient(90deg, rgba(0,0,0,1), rgba(0,0,0,.0));
-    }
-    .graffiti-wall::after{
-      right:0;
-      transform: scaleX(-1);
-      background:
-        radial-gradient(160px 240px at 40% 20%, rgba(255,69,0,.10), transparent 70%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='1200'%3E%3Cstyle%3E.t%7Bfont-family:'Permanent%20Marker',cursive;font-size:54px;fill:rgba(255,255,255,0.20);%7D.o%7Bfill:rgba(255,69,0,0.18);%7D%3C/style%3E%3Ctext x='16' y='140' class='t'%3ESilver%20Crown%3C/text%3E%3Ctext x='16' y='260' class='t o'%3EPavlograd%3C/text%3E%3Ctext x='16' y='380' class='t'%3E2004%E2%80%932006%3C/text%3E%3Ctext x='16' y='620' class='t o'%3ESilver%20Crown%3C/text%3E%3Ctext x='16' y='740' class='t'%3EPavlograd%3C/text%3E%3Ctext x='16' y='860' class='t o'%3E2004%E2%80%932006%3C/text%3E%3C/svg%3E");
-      background-repeat:no-repeat;
-      background-position:center;
-      background-size:cover;
-      mask-image: linear-gradient(90deg, rgba(0,0,0,1), rgba(0,0,0,.0));
-    }
+    .side-graffiti .left{ left: 10px; }
+    .side-graffiti .right{ right: 10px; }
 
     /* Top bar */
     .topbar{
@@ -153,7 +140,6 @@
       gap:12px;
     }
 
-    /* Language pills */
     .pill{
       display:inline-flex;
       align-items:center;
@@ -170,9 +156,16 @@
     }
     .pill.active{border-color: rgba(255,69,0,.55); background: rgba(255,69,0,.10); color: rgba(244,244,246,.95)}
 
-    /* Sections */
     main{padding-top: 84px; padding-bottom: 40px;}
-    section{max-width: var(--max); margin:0 auto; padding: 60px 16px;}
+    section{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 60px 16px;
+
+      /* ✅ чтобы боковые картинки не залезали на текст */
+      padding-left: clamp(16px, 6vw, calc(var(--graffiti-w) + 28px));
+      padding-right: clamp(16px, 6vw, calc(var(--graffiti-w) + 28px));
+    }
 
     h1{
       margin:0;
@@ -183,13 +176,6 @@
       text-transform: uppercase;
       line-height: .95;
       font-weight: 800;
-    }
-    h2{
-      margin:0 0 12px;
-      font-family: "Bebas Neue", Inter, sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      letter-spacing:.16em;
-      text-transform:uppercase;
     }
 
     .sub{margin: 10px 0 0; color:var(--muted); max-width: 980px; font-size: 1.02rem}
@@ -232,7 +218,6 @@
     }
     .tag i{color: rgba(255,69,0,.95)}
 
-    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; gap:10px;
       padding: 12px 16px;
@@ -247,6 +232,8 @@
       cursor:pointer;
       transition: transform .18s ease, filter .18s ease;
       text-decoration:none;
+      position:relative;
+      overflow:hidden;
     }
     .btn:hover{transform: translateY(-1px);}
 
@@ -254,15 +241,9 @@
       border:none;
       color:#0b0c0f;
       background: linear-gradient(90deg, var(--orange), var(--orange2));
-      position:relative;
-      overflow:hidden;
     }
 
-    /* Spray hover effect for buttons + tags + links (subtle) */
-    .btn, .tag, a.spray{
-      position:relative;
-      overflow:hidden;
-    }
+    /* Subtle spray hover */
     .btn::after, .tag::after, a.spray::after{
       content:"";
       position:absolute;
@@ -283,19 +264,10 @@
       transform: scale(1);
     }
 
-    /* Typography for long text */
     .content{
       line-height: 1.75;
       font-size: 1.02rem;
       color: rgba(244,244,246,.88);
-    }
-    .content strong{color: rgba(244,244,246,.96)}
-    .content h3{
-      margin: 16px 0 8px;
-      font-size: 1.06rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      color: rgba(244,244,246,.92);
     }
     .content .kicker{
       font-family: "Bebas Neue", Inter, sans-serif;
@@ -304,6 +276,13 @@
       color: rgba(244,244,246,.92);
       font-size: 1.7rem;
       margin: 0 0 8px;
+    }
+    .content h3{
+      margin: 16px 0 8px;
+      font-size: 1.06rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: rgba(244,244,246,.92);
     }
     .bullet{
       margin: 10px 0 0;
@@ -329,11 +308,9 @@
       margin: 18px 0;
     }
 
-    /* Language blocks */
     [data-lang]{display:none}
     [data-lang].show{display:block}
 
-    /* Footer */
     footer{
       max-width: var(--max);
       margin:0 auto;
@@ -341,7 +318,7 @@
       color: rgba(244,244,246,.58);
       border-top: 1px solid rgba(255,255,255,.08);
       position:relative;
-      z-index:1;
+      z-index:2;
     }
     footer p{
       margin: 18px 0 0;
@@ -350,16 +327,16 @@
       text-transform:uppercase;
     }
 
-    /* Responsive */
+    /* ✅ Mobile: hide side graffiti + restore normal padding */
     @media (max-width: 900px){
-      .graffiti-wall::before, .graffiti-wall::after{opacity:.14; width:min(16vw, 160px);}
+      .side-graffiti{ display:none; }
+      section{ padding-left: 16px; padding-right: 16px; }
       .right{gap:10px}
     }
     @media (max-width: 520px){
       section{padding: 54px 14px;}
       .topbar{padding: 12px 12px}
       .brand .t{font-size: 20px}
-      .graffiti-wall::before, .graffiti-wall::after{display:none}
       .pill{padding: 7px 10px}
     }
 
@@ -369,7 +346,13 @@
   </style>
 </head>
 
-<body class="graffiti-wall">
+<body>
+  <!-- ✅ боковые граффити как ДВА ОТДЕЛЬНЫХ файла -->
+  <div class="side-graffiti" aria-hidden="true">
+    <img class="left"  src="/graffiti-silver-crown.png" alt="" loading="lazy" decoding="async">
+    <img class="right" src="/graffiti-pavlograd.png"     alt="" loading="lazy" decoding="async">
+  </div>
+
   <div class="wrap" id="top">
     <header class="topbar" role="banner">
       <div class="brand" aria-label="TAYMAY brand">
@@ -378,11 +361,9 @@
       </div>
 
       <div class="right">
-        <!-- Language switch -->
         <div class="pill active" id="btn-ru" role="button" tabindex="0">RU</div>
         <div class="pill" id="btn-en" role="button" tabindex="0">EN</div>
 
-        <!-- Back button -->
         <a class="btn btn-primary" href="/index.html#top" aria-label="Back to TAYMAY Official">
           <i class="fa-solid fa-arrow-left"></i> Назад
         </a>
@@ -506,11 +487,11 @@
                   who 10 years later committed a robbery at Roman's grandfather's apartment in Pavlohrad.
                 </p>
 
-                <h3>Public Performances:</h3>
+                <h3>Public Performances</h3>
                 <ul class="bullet">
-                  <li><i class="fa-solid fa-city"></i><div><strong>City Day:</strong> Annual performances on Pavlohrad's main stages for audiences of thousands.</div></li>
-                  <li><i class="fa-solid fa-flag"></i><div><strong>Citywide Festivals:</strong> Participation in concerts dedicated to youth and national holidays.</div></li>
-                  <li><i class="fa-solid fa-school"></i><div><strong>Educational Institutions:</strong> Performances at school events that helped popularize hip-hop culture among the city's youth.</div></li>
+                  <li><i class="fa-solid fa-city"></i><div><strong>City Day</strong> Annual performances on Pavlohrad's main stages for audiences of thousands.</div></li>
+                  <li><i class="fa-solid fa-flag"></i><div><strong>Citywide Festivals</strong> Participation in concerts dedicated to youth and national holidays.</div></li>
+                  <li><i class="fa-solid fa-school"></i><div><strong>Educational Institutions</strong> Performances at school events that helped popularize hip-hop culture among the city's youth.</div></li>
                 </ul>
 
                 <div class="divider"></div>
@@ -522,7 +503,6 @@
 
               <div class="divider"></div>
 
-              <!-- Optional: placeholders for photos + player (you can keep or remove) -->
               <div class="meta" aria-label="Quick links">
                 <a class="tag spray" href="https://taymay1.bandcamp.com/" target="_blank" rel="noopener"><i class="fa-brands fa-bandcamp"></i>Bandcamp</a>
                 <a class="tag spray" href="https://www.instagram.com/4taymay4/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i>Instagram</a>
@@ -541,7 +521,6 @@
   </div>
 
   <script>
-    // Language toggle
     const btnRU = document.getElementById('btn-ru');
     const btnEN = document.getElementById('btn-en');
     const blocksRU = Array.from(document.querySelectorAll('[data-lang="ru"]'));
@@ -567,28 +546,7 @@
     btnEN.addEventListener('click', ()=>setLang('en'));
     btnRU.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') setLang('ru'); });
     btnEN.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') setLang('en'); });
-
-    // Micro Spray Click Sound (very subtle)
-    let sprayAudioEnabled = false;
-
-    const spraySound = new Audio(
-      "data:audio/wav;base64,UklGRlIAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YRAAAAAAAP//f/7//v/+/f39/fz8/Pz8+/v7+/n5+fn5+Pj4+Pf39/f39vb29vb29fX19fT09PPz8/Pz8vLy8vHx8fDw8PDw8O/v7+/u7u7u7e3t7e3t7Ozs7Ozs6+vr6+rq6urq6enp6enp5+fn5+bm5ubm5OTk5OTk4+Pj4+Pj4eHh4eHh"
-    );
-
-    document.addEventListener("pointerdown", () => {
-      sprayAudioEnabled = true;
-    }, { once: true });
-
-    function playSpray(){
-      if(!sprayAudioEnabled) return;
-      spraySound.currentTime = 0;
-      spraySound.volume = 0.08; // very subtle
-      spraySound.play().catch(()=>{});
-    }
-
-    document.querySelectorAll(".btn, .tag, a.spray").forEach(el=>{
-      el.addEventListener("click", playSpray);
-    });
   </script>
 </body>
 </html>
+
