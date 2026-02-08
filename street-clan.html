@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STREET CLAN | Legacy 2007</title>
-  <meta name="description" content="Street Clan (Irpin, 2007). Official Biography & History.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,23 +13,23 @@
   <style>
     :root {
       --bg: #050505;
-      --gold: #d4af37; /* Luxury Gold */
-      --silver: #a0a0a0;
-      --glass: rgba(10, 10, 10, 0.75);
-      --border: rgba(255, 255, 255, 0.1);
+      --gold: #d4af37;
+      --gold-glow: rgba(212, 175, 55, 0.3);
+      --glass-dark: rgba(0, 0, 0, 0.75); /* Темное стекло для читаемости */
+      --border: rgba(255, 255, 255, 0.15);
     }
 
     /* ⬛️ BASE SETUP */
     body {
       margin: 0;
       background-color: var(--bg);
-      color: #e0e0e0;
+      color: #f0f0f0;
       font-family: 'Manrope', sans-serif;
       overflow-x: hidden;
       line-height: 1.8;
     }
 
-    /* 🌊 HUGE TAYMAY WATERMARK (BACKGROUND) */
+    /* 🌊 HUGE TAYMAY WATERMARK */
     .watermark-container {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -45,33 +44,29 @@
       font-family: 'Syncopate', sans-serif;
       font-weight: 900;
       font-size: 25vw;
-      color: rgba(255, 255, 255, 0.02);
+      color: rgba(255, 255, 255, 0.03);
       transform: rotate(-15deg);
       white-space: nowrap;
       text-transform: uppercase;
-      letter-spacing: -0.05em;
     }
 
-    /* 🔥 PHOENIX VIBRANT SETTINGS (Яркий, цветной) */
+    /* 🔥 PHOENIX BACKGROUND (Яркий, но на заднем плане) */
     .ghost-graffiti {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-      max-width: 1000px;
+      max-width: 1100px;
       height: auto;
-      z-index: 1; /* Слой: Фон (0) -> Феникс (1) -> Контент (2) */
-      opacity: 0.4; /* Яркость 40% (было 15%) */
-      filter: contrast(1.1) brightness(1.1); /* Натуральные цвета, чуть контрастнее */
+      z-index: 0; 
+      opacity: 0.35; /* Баланс яркости */
+      filter: contrast(1.2) brightness(1.1);
       pointer-events: none;
     }
-
+    
     @media (max-width: 768px) {
-      .ghost-graffiti {
-        width: 140%;
-        opacity: 0.3; /* На мобильном чуть тусклее */
-      }
+      .ghost-graffiti { width: 150%; opacity: 0.25; }
     }
 
     /* 🎥 PRELOADER */
@@ -101,122 +96,139 @@
       justify-content: space-between;
       align-items: center;
       z-index: 100;
+      background: rgba(0,0,0,0.8);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid var(--border);
     }
-    .brand { font-family: 'Cinzel', serif; font-weight: 700; color: #fff; text-decoration: none;}
+    .brand { font-family: 'Cinzel', serif; font-weight: 700; color: #fff; text-decoration: none; font-size: 0.9rem;}
     
     .lang-switch button {
       background: transparent;
       border: 1px solid var(--border);
-      color: #666;
-      padding: 5px 10px;
+      color: #888;
+      padding: 5px 15px;
       cursor: pointer;
       font-family: 'Syncopate', sans-serif;
       font-size: 10px;
       transition: 0.3s;
+      margin-left: 5px;
     }
     .lang-switch button.active {
       color: var(--gold);
       border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.1);
     }
 
     /* 📄 MAIN CONTAINER */
     .container {
       position: relative;
-      z-index: 2; /* Поверх водяного знака и феникса */
+      z-index: 2;
       max-width: 900px;
-      margin: 120px auto 60px;
+      margin: 140px auto 60px;
       padding: 0 20px;
       text-align: center;
+    }
+
+    /* 🛡️ GLASS PANEL (Для читаемости текста) */
+    .text-panel {
+      background: var(--glass-dark);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      margin-bottom: 40px;
     }
 
     /* TYPOGRAPHY */
     h1 {
       font-family: 'Syncopate', sans-serif;
       font-size: clamp(2.5rem, 6vw, 5rem);
-      margin-bottom: 10px;
-      background: linear-gradient(180deg, #fff, #666);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+      color: #fff;
       text-transform: uppercase;
+      text-shadow: 0 0 30px rgba(255,255,255,0.1);
     }
     .subtitle {
       font-family: 'Cinzel', serif;
       color: var(--gold);
       letter-spacing: 0.2em;
-      font-size: 1.2rem;
-      margin-bottom: 60px;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+      text-shadow: 0 0 10px var(--gold-glow);
     }
 
     h3 {
       font-family: 'Cinzel', serif;
       color: #fff;
-      font-size: 1.8rem;
-      margin-top: 60px;
-      margin-bottom: 30px;
+      font-size: 1.6rem;
+      margin: 40px 0 20px;
       text-transform: uppercase;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--gold);
       display: inline-block;
       padding-bottom: 10px;
     }
 
     p {
-      font-size: 1.15rem;
-      color: #ccc;
+      font-size: 1.1rem;
+      color: #ddd; /* Светло-серый для контраста */
       margin-bottom: 25px;
+      text-align: left; /* Текст читать удобнее слева */
     }
+    
+    /* Центруем вводный текст */
+    .intro-text { text-align: center; font-size: 1.2rem; line-height: 1.6; }
 
     strong { color: #fff; font-weight: 600; }
 
-    /* 🖼️ GALLERY GRID (Яркие фото) */
+    /* 🖼️ GALLERY GRID */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin: 60px 0;
+      margin: 40px 0;
     }
     .gallery img {
       width: 100%;
-      height: 300px;
+      height: 320px;
       object-fit: cover;
-      border-radius: 4px;
-      
-      /* 👇 Всегда цветные (убрали ч/б) */
-      filter: brightness(1); 
-      
+      border-radius: 2px;
+      filter: brightness(0.9) contrast(1.1); /* Чуть насыщеннее */
       transition: all 0.5s ease;
       border: 1px solid var(--border);
     }
     .gallery img:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
       border-color: var(--gold);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Добавили тень */
+      filter: brightness(1.1) contrast(1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      z-index: 10;
     }
 
-    /* 🔳 FEATURE LISTS */
+    /* 🔳 LISTS */
     .member-list {
       list-style: none;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      align-items: center;
+      margin: 20px 0;
+      text-align: left;
     }
     .member-list li {
-      background: rgba(255,255,255,0.03);
-      padding: 15px 30px;
-      border: 1px solid var(--border);
-      width: 100%;
-      max-width: 600px;
+      background: rgba(255,255,255,0.05);
+      padding: 15px 20px;
+      border-left: 3px solid var(--gold);
+      margin-bottom: 10px;
+      color: #eee;
     }
-    .member-list span { color: var(--gold); font-weight: bold; font-family: 'Syncopate', sans-serif; margin-right: 10px;}
+    .member-list span { color: var(--gold); font-weight: bold; font-family: 'Syncopate', sans-serif; margin-right: 10px; font-size: 0.9em;}
 
-    /* 📱 MOBILE */
-    @media (max-width: 768px) {
-      .watermark-text { font-size: 40vw; transform: rotate(-90deg); }
-      h1 { line-height: 1; }
-      .container { margin-top: 100px; }
+    /* Highlight Box */
+    .highlight-box {
+      border: 1px solid var(--gold);
+      padding: 30px;
+      background: rgba(212, 175, 55, 0.08);
+      text-align: center;
+      margin-top: 30px;
     }
 
     /* UTILS */
@@ -224,14 +236,6 @@
     .fade-in { animation: fadeIn 0.8s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0% { opacity: 0.5; } 100% { opacity: 1; } }
-
-    /* Цитата/Врезка */
-    .highlight-box {
-      border: 1px solid var(--gold);
-      padding: 30px;
-      margin: 40px 0;
-      background: rgba(212, 175, 55, 0.05);
-    }
   </style>
 </head>
 <body>
@@ -243,166 +247,149 @@
   <div class="watermark-container">
     <div class="watermark-text">TAYMAY</div>
   </div>
-
   <img class="ghost-graffiti" src="/phoenix-bg.png" alt="Rising Tide Phoenix">
 
   <nav class="topbar">
-    <a href="/index.html" class="brand">← BACK</a>
+    <a href="/index.html" class="brand">← BACK TO HUB</a>
     <div class="lang-switch">
       <button id="btn-ru" class="active">RU</button>
       <button id="btn-en">EN</button>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container fade-in">
 
-    <header class="fade-in">
+    <header>
       <h1>Street Clan</h1>
       <div class="subtitle">Tax Academy Underground • 2007</div>
     </header>
 
-    <div id="content-ru" class="fade-in">
-      <p>
-        <strong>Street Clan</strong> — украинский рэп-коллектив, основанный в 2007 году в городе Ирпень. 
-        Группа стала уникальным явлением на музыкальной сцене, зародившись в стенах Национального университета 
-        государственной налоговой службы Украины (НУДПСУ).
-      </p>
-      <p>
-        Участники коллектива, будучи курсантами налоговой милиции, смогли объединить строгую службу 
-        с творчеством, социальной миссией и уличной культурой хип-хопа.
-      </p>
+    <div id="content-ru">
+      
+      <div class="text-panel">
+        <p class="intro-text">
+          <strong>Street Clan</strong> — украинский рэп-коллектив, ставший голосом улиц в стенах Налоговой Академии (НУДПСУ).
+          Мы объединили строгую дисциплину курсантов с духом свободы хип-хопа, создав уникальный культурный феномен Ирпеня 2007 года.
+        </p>
+      </div>
 
-      <h3>⭐️ Основание и Дебют (2007)</h3>
-      <p>История группы началась с творческого союза двух курсантов:</p>
-      <ul class="member-list">
-        <li><span>ТАЙМАЙ</span> (Роман Рябко) — основатель, автор текстов.</li>
-        <li><span>КЛИМ</span> (Клим Клименко) — сооснователь.</li>
-      </ul>
-      <p style="margin-top:20px;">
-        Первое публичное выступление состоялось в 2007 году на «Творческом вечере курсантов». 
-        Дуэт дебютировал с фрагментом философской композиции <strong>«Актеры»</strong>. 
-        Успешный старт положил начало активной концертной деятельности, о чем неоднократно писали в газете НУДПСУ.
-      </p>
+      <div class="text-panel">
+        <h3>⭐️ Основание и Дебют</h3>
+        <p>История началась с союза двух курсантов, решивших нарушить тишину устава:</p>
+        <ul class="member-list">
+          <li><span>ТАЙМАЙ</span> (Роман Рябко) — Основатель, автор текстов, идеолог.</li>
+          <li><span>КЛИМ</span> (Клим Клименко) — Сооснователь, MC.</li>
+        </ul>
+        <p>
+          Первый трек <strong>«Актеры»</strong> прозвучал на «Творческом вечере курсантов» в 2007 году как вызов системе. 
+          Это было не просто выступление, а заявление о том, что под формой скрываются живые люди.
+        </p>
+      </div>
 
       <div class="gallery">
-        <img src="/photo1.jpg" alt="Street Clan архив" loading="lazy">
-        <img src="/photo2.jpg" alt="Выступление" loading="lazy">
-        <img src="/photo3.jpg" alt="Фото состава" loading="lazy">
+        <img src="/sc-1.jpg" alt="Street Clan Stage" loading="lazy">
+        <img src="/sc-2.jpg" alt="Taymay and Klim" loading="lazy">
+        <img src="/sc-3.jpg" alt="Academy Life" loading="lazy">
       </div>
 
-      <h3>❤️ Социальная миссия</h3>
-      <p>
-        В отличие от многих рэп-групп того времени, Street Clan сделали акцент на социальной ответственности. 
-        Коллектив регулярно участвовал в благотворительных акциях:
-      </p>
-      <ul class="member-list">
-        <li>Выступления в детских домах города Гостомель.</li>
-        <li>Благотворительные концерты в Киеве в поддержку онкобольных детей.</li>
-      </ul>
-      <div class="highlight-box">
-        <i class="fa-solid fa-music" style="color:var(--gold)"></i><br><br>
-        <strong>Сольный проект:</strong> Параллельно с работой в группе, ТАЙМАЙ развивал сольное творчество. 
-        Знаковой работой стала песня <strong>«Есть надежда»</strong>, посвященная борьбе с онкологией.
+      <div class="text-panel">
+        <h3>❤️ Социальная Миссия</h3>
+        <p>Мы не искали славы, мы искали правду. Street Clan выбрал путь благотворительности:</p>
+        <ul class="member-list">
+          <li>Концерты в детских домах Гостомеля.</li>
+          <li>Сбор средств для онкобольных детей в Киеве.</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fa-solid fa-compact-disc" style="color:var(--gold); font-size:24px; margin-bottom:15px;"></i><br>
+          <strong>SOLO PROJECT:</strong> Параллельно ТАЙМАЙ выпустил трек <strong>«Есть надежда»</strong> — гимн борьбы и веры для тех, кто столкнулся с онкологией.
+        </div>
       </div>
 
-      <h3>🚀 Расширение состава (2008)</h3>
-      <p>В 2008 году звучание группы трансформировалось благодаря приходу новых участников:</p>
-      <ul class="member-list">
-        <li><span>SHAKE</span> (Евгений Шейко) — техничный флоу.</li>
-        <li><span>ОЛЬГА ПЕЛЕШАТА</span> — вокал, баллады под живые инструменты.</li>
-      </ul>
+      <div class="text-panel">
+        <h3>🚀 Новая Эра (2008)</h3>
+        <p>Звучание группы стало профессиональнее с приходом новых участников:</p>
+        <ul class="member-list">
+          <li><span>SHAKE</span> (Евгений Шейко) — Техничный флоу и энергия.</li>
+          <li><span>ОЛЬГА ПЕЛЕШАТА</span> — Вокал, добавивший мелодику живых инструментов.</li>
+        </ul>
+      </div>
 
       <div class="gallery">
-        <img src="/photo4.jpg" alt="Архив 2008" loading="lazy">
-        <img src="/photo5.jpg" alt="Архив сцена" loading="lazy">
-        <img src="/photo6.jpg" alt="Архив Ирпень" loading="lazy">
+        <img src="/sc-4.jpg" alt="Street Clan 2008" loading="lazy">
+        <img src="/sc-5.jpg" alt="Live Show" loading="lazy">
+        <img src="/sc-6.jpg" alt="Backstage Irpin" loading="lazy">
       </div>
 
-      <h3>📍 Одесский инцидент</h3>
-      <p>
-        В расширенном составе группа приняла участие в отборе <strong>«Україна має талант»</strong> в Одессе. 
-        К сожалению, видеозапись этого исторического выступления считается утраченной: 
-        видеокамера с архивом была украдена у музыкантов на ж/д вокзале.
-      </p>
-
-      <h3>География и Наследие</h3>
-      <p>
-        Несмотря на то, что многие студийные записи того времени остались неизданными официально, 
-        тексты и демо-версии треков были сохранены и загружены на платформу <strong>Genius</strong>, 
-        став частью истории локального украинского андеграунда конца 2000-х.
-      </p>
+      <div class="text-panel">
+        <h3>📍 Утраченный Архив</h3>
+        <p>
+          В 2008 году группа прошла отбор на шоу <strong>«Україна має талант»</strong> в Одессе. 
+          Это был пик формы. Но судьба распорядилась иначе: на вокзале была украдена камера с уникальным видеоархивом.
+        </p>
+        <p style="border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; font-size: 0.9rem; color: #888;">
+          Сегодня наше наследие — это тексты на Genius и память тех, кто был с нами в Ирпене.
+        </p>
+      </div>
     </div>
 
-    <div id="content-en" class="hidden fade-in">
-      <p>
-        <strong>Street Clan</strong> is a Ukrainian rap collective founded in 2007 in Irpin. 
-        The group became a unique phenomenon in the music scene, originating within the walls of the 
-        National University of the State Tax Service of Ukraine (NUDPSU).
-      </p>
-      <p>
-        As cadets of the tax police, the members managed to merge strict military service with creativity, 
-        a strong social mission, and street hip-hop culture.
-      </p>
+    <div id="content-en" class="hidden">
+      
+      <div class="text-panel">
+        <p class="intro-text">
+          <strong>Street Clan</strong> is a Ukrainian underground rap collective founded in 2007 in Irpin. 
+          Born within the strict walls of the National Tax Academy (NUDPSU), we merged military discipline with the freedom of hip-hop culture.
+        </p>
+      </div>
 
-      <h3>⭐️ Foundation & Debut (2007)</h3>
-      <p>The history of the group began with the creative union of two cadets:</p>
-      <ul class="member-list">
-        <li><span>TAYMAY</span> (Roman Ryabko) — founder, lyricist.</li>
-        <li><span>KLIM</span> (Klim Klimenko) — co-founder.</li>
-      </ul>
-      <p style="margin-top:20px;">
-        Their first public performance took place in 2007 at the "Cadets' Creative Evening." 
-        The duo debuted with a fragment of the philosophical track <strong>"Actors"</strong>. 
-        This successful start led to active concert activity, which was repeatedly covered in the official NUDPSU newspaper.
-      </p>
+      <div class="text-panel">
+        <h3>⭐️ Foundation & Debut</h3>
+        <ul class="member-list">
+          <li><span>TAYMAY</span> (Roman Ryabko) — Founder, Lyricist.</li>
+          <li><span>KLIM</span> (Klim Klimenko) — Co-founder, MC.</li>
+        </ul>
+        <p>
+          Debut track <strong>"Actors"</strong> (2007) challenged the system, proving that creativity exists even behind the uniform.
+        </p>
+      </div>
 
       <div class="gallery">
-        <img src="/photo1.jpg" alt="Street Clan Archive" loading="lazy">
-        <img src="/photo2.jpg" alt="Performance" loading="lazy">
-        <img src="/photo3.jpg" alt="Lineup" loading="lazy">
+        <img src="/sc-1.jpg" alt="Archive 1" loading="lazy">
+        <img src="/sc-2.jpg" alt="Archive 2" loading="lazy">
+        <img src="/sc-3.jpg" alt="Archive 3" loading="lazy">
       </div>
 
-      <h3>❤️ Social Mission</h3>
-      <p>
-        Unlike many rap groups of that time, Street Clan emphasized social responsibility. 
-        The collective regularly participated in charity events:
-      </p>
-      <ul class="member-list">
-        <li>Performances at orphanages in the city of Hostomel.</li>
-        <li>Charity concerts in Kyiv supporting children with oncology.</li>
-      </ul>
-      <div class="highlight-box">
-        <i class="fa-solid fa-music" style="color:var(--gold)"></i><br><br>
-        <strong>Solo Project:</strong> In parallel with the group, TAYMAY developed his solo career. 
-        A landmark work of this period was the song <strong>"There is Hope"</strong> (Est' Nadezhda), dedicated to the fight against cancer.
+      <div class="text-panel">
+        <h3>❤️ Social Mission</h3>
+        <ul class="member-list">
+          <li>Charity concerts at Hostomel orphanages.</li>
+          <li>Fundraising for children with cancer in Kyiv.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>SOLO PROJECT:</strong> TAYMAY's song <strong>"There is Hope"</strong> became an anthem for fighting cancer.
+        </div>
       </div>
 
-      <h3>🚀 Expansion (2008)</h3>
-      <p>In 2008, the group's sound evolved thanks to new members:</p>
-      <ul class="member-list">
-        <li><span>SHAKE</span> (Evgeniy Sheiko) — joined the rap lineup, enhancing technical flow.</li>
-        <li><span>OLGA PELESHATA</span> — talented vocalist from the cadets (ballads with live instruments).</li>
-      </ul>
+      <div class="text-panel">
+        <h3>🚀 Expansion (2008)</h3>
+        <ul class="member-list">
+          <li><span>SHAKE</span> (Evgeniy Sheiko) — Technical flow.</li>
+          <li><span>OLGA PELESHATA</span> — Vocalist (Live instruments).</li>
+        </ul>
+      </div>
 
       <div class="gallery">
-        <img src="/photo4.jpg" alt="Archive 2008" loading="lazy">
-        <img src="/photo5.jpg" alt="Stage Archive" loading="lazy">
-        <img src="/photo6.jpg" alt="Irpin Archive" loading="lazy">
+        <img src="/sc-4.jpg" alt="Archive 4" loading="lazy">
+        <img src="/sc-5.jpg" alt="Archive 5" loading="lazy">
+        <img src="/sc-6.jpg" alt="Archive 6" loading="lazy">
       </div>
 
-      <h3>📍 The Odesa Incident</h3>
-      <p>
-        The expanded lineup participated in the selection round of the 2nd season of <strong>"Ukraine's Got Talent"</strong> in Odesa. 
-        Tragically, the video recording of this historical performance is considered lost: 
-        the video camera containing the archive was stolen from the musicians at the railway station.
-      </p>
-
-      <h3>Geography & Legacy</h3>
-      <p>
-        Although many studio recordings of that time remain officially unreleased, 
-        lyrics and demo versions of the tracks have been preserved and uploaded to the <strong>Genius</strong> platform, 
-        becoming part of the history of the local Ukrainian underground of the late 2000s.
-      </p>
+      <div class="text-panel">
+        <h3>📍 The Lost Tapes</h3>
+        <p>
+          In 2008, the group qualified for <strong>"Ukraine's Got Talent"</strong> (Odesa). 
+          Tragically, the camera containing the entire video archive of this era was stolen at the railway station.
+        </p>
+      </div>
     </div>
 
   </div>
