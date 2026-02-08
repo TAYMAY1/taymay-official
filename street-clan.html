@@ -41,6 +41,23 @@
       align-items: center;
       overflow: hidden;
     }
+    .ghost-graffiti {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      z-index: 1;
+      opacity: 0.15;
+      filter: saturate(0) sepia(100%) hue-rotate(350deg) contrast(1.2);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .ghost-graffiti { width: 140%; opacity: 0.12; }
+    }
     .watermark-text {
       font-family: 'Syncopate', sans-serif;
       font-weight: 900;
@@ -218,6 +235,7 @@
   <div class="watermark-container">
     <div class="watermark-text">TAYMAY</div>
   </div>
+  <img class="ghost-graffiti" src="/phoenix-bg.png" alt="Rising Tide Phoenix">
 
   <nav class="topbar">
     <a href="/index.html" class="brand">← BACK</a>
