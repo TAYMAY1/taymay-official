@@ -3,402 +3,964 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silver Crown — Начало 2004–2006 | TAYMAY Official</title>
-  <meta name="description" content="Silver Crown — Pavlograd Hip-Hop Heritage. История, состав, ранние записи, коллаборации и социальные выступления." />
-  
+  <title>Silver Crown — начало 2004–2006 | TAYMAY Official</title>
+  <meta name="description" content="Silver Crown — 2003–2006. Pavlograd Hip-Hop Heritage. Архив: состав, ранние записи, коллаборации, социальные выступления. Digital Museum." />
+  <link rel="canonical" href="https://taymay-official.vercel.app/silver-crown.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TAYMAY" />
+  <meta property="og:title" content="Silver Crown — 2003–2006 | Digital Museum" />
+  <meta property="og:description" content="Архив Silver Crown: состав, ранние записи, коллаборации и резонанс в Павлограде. Pavlograd Hip-Hop Heritage." />
+  <meta property="og:url" content="https://taymay-official.vercel.app/silver-crown.html" />
+  <meta property="og:image" content="https://taymay-official.vercel.app/banner.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Silver Crown — 2003–2006 | Digital Museum" />
+  <meta name="twitter:description" content="Архив Silver Crown: состав, ранние записи, коллаборации и резонанс в Павлограде." />
+  <meta name="twitter:image" content="https://taymay-official.vercel.app/banner.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0a0c">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
 
   <style>
     :root{
-      --bg: #050505;
-      --bg2: #0a0a0c;
-      --text: #e0e0e0;
-      --muted: rgba(255,255,255,0.5);
-      --accent: #d4d4d8; /* Silver accent */
-      --glass: rgba(20, 20, 22, 0.7);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --silver-glow: 0 0 25px rgba(200, 210, 255, 0.15); /* Холодное свечение */
-      --radius: 4px; /* Более строгие углы для "индустриального" стиля */
-      --max: 1000px; /* Чуть уже контент для "журнального" вида */
-      
-      --graffiti-w: 380px;
+      --bg:#0a0a0c;
+      --bg2:#0f0f13;
+      --text:#f4f4f6;
+      --muted:rgba(244,244,246,.72);
+      --glass:rgba(18,18,22,.62);
+      --glass2:rgba(18,18,22,.42);
+      --orange:#FF4500;
+      --orange2:#ff6b3a;
+      --silver: rgba(220,220,230,.92);
+      --silver2: rgba(220,220,230,.55);
+      --shadow: 0 18px 70px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1180px;
+
+      --graffiti-w: 320px;
+      --graffiti-opacity: 0.20;
     }
 
-    * { box-sizing: border-box; }
-    
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(255,69,0,.10), transparent 55%),
+        radial-gradient(900px 600px at 10% 10%, rgba(255,69,0,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
     }
 
-    /* 🔥 Noise Texture (Дорогой "Шум") */
-    body::before {
-      content: "";
+    /* Dark concrete / noise (subtle) */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:.10;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.18), transparent 55%),
+        radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,.14), transparent 55%),
+        radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.12), transparent 55%),
+        radial-gradient(1px 1px at 85% 25%, rgba(255,255,255,.10), transparent 55%);
+      background-size: 220px 220px;
+      mix-blend-mode: overlay;
+    }
+
+    /* Film grain */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:.10;
+      mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      background-size:180px 180px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{position:relative; z-index:2;}
+
+    /* Side graffiti images (two separate files) */
+    .side-graffiti{
       position: fixed;
       inset: 0;
-      z-index: -1;
-      opacity: 0.07;
       pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      z-index: 1;
     }
-
-    /* Background Gradient Spot */
-    body::after {
-      content: "";
+    .side-graffiti img{
       position: fixed;
-      top: -20%; left: 50%;
-      transform: translateX(-50%);
-      width: 100vw; height: 80vh;
-      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    /* 🎨 Side Graffiti */
-    .side-graffiti {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .side-graffiti img {
-      position: absolute;
       top: 50%;
       transform: translateY(-50%);
       width: var(--graffiti-w);
-      opacity: 0.3; /* Чуть ярче, но смешано с фоном */
-      mix-blend-mode: luminosity; /* Делает их стильно-монохромными, в цвет сайта */
-      transition: opacity 0.5s ease;
+      max-width: 30vw;
+      height: auto;
+      opacity: var(--graffiti-opacity);
+      filter: saturate(1.1) contrast(1.05);
+      mix-blend-mode: screen;
+      user-select: none;
     }
-    .side-graffiti .left { left: -50px; }
-    .side-graffiti .right { right: -50px; }
+    .side-graffiti .left{ left: 10px; }
+    .side-graffiti .right{ right: 10px; }
 
-    /* Layout */
-    .wrap { position: relative; z-index: 2; padding-top: 100px; padding-bottom: 60px; }
-    
-    section {
+    /* Top bar */
+    .topbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 16px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(10,10,12,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .brand{
+      display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+      font-family: "Bebas Neue", Inter, sans-serif;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      line-height:1;
+    }
+    .brand .t{font-size:22px}
+    .brand .o{font-size:12px; letter-spacing:.22em; opacity:.8}
+
+    .right{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill.active{border-color: rgba(255,69,0,.55); background: rgba(255,69,0,.10); color: rgba(244,244,246,.95)}
+
+    main{padding-top: 84px; padding-bottom: 40px;}
+    section{
       max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 20px;
+      margin:0 auto;
+      padding: 60px 16px;
+      padding-left: clamp(16px, 6vw, calc(var(--graffiti-w) + 28px));
+      padding-right: clamp(16px, 6vw, calc(var(--graffiti-w) + 28px));
     }
 
-    /* 💎 Premium Card Style */
-    .card {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
+    /* Cards */
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap: 18px;}
+    .card{
+      position:relative;
       border-radius: var(--radius);
-      padding: clamp(30px, 5vw, 60px);
-      position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, var(--glass), var(--glass2));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    
-    /* Top Shine Effect on Card */
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background: radial-gradient(520px 320px at 15% 12%, rgba(255,69,0,.14), transparent 60%);
+      opacity:.85;
+      pointer-events:none;
     }
+    .card > *{position:relative; z-index:1}
+    .pad{padding: 22px 22px;}
 
-    /* 🎬 Typography & Animation */
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 0.9;
-      margin: 0 0 20px;
-      color: #fff;
+    /* Premium Underground hero header */
+    .hero-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    h1{
+      margin:0;
+      font-family: "Bebas Neue", Inter, sans-serif;
+      font-size: clamp(2.0rem, 3.4vw, 3.0rem);
+      letter-spacing: .10em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      
-      /* Silver Glow Effect */
-      text-shadow: var(--silver-glow);
-      
-      /* Animation */
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      line-height: 1;
+      font-weight: 800;
     }
 
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* 🏷 Industrial Tags (Бирки) */
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 40px;
-      
-      opacity: 0;
-      animation: fadeUp 1s 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Задержка анимации */
-    }
-
-    .tag {
-      font-family: 'JetBrains Mono', monospace; /* Моноширинный шрифт для "техничности" */
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 6px 12px;
-      border-radius: 2px;
-      background: rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-    
-    .tag i { margin-right: 8px; color: var(--accent); }
-    
-    .tag:hover {
-      border-color: var(--accent);
-      color: #fff;
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
-    }
-
-    /* Content Styling */
-    .content h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-top: 40px;
-      border-left: 2px solid var(--accent);
-      padding-left: 15px;
-    }
-
-    .lead, p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1.05rem;
-      font-weight: 300;
-      margin-bottom: 20px;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      margin: 40px 0;
-    }
-
-    /* Bullet Points */
-    .bullet {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-    .bullet li {
+    /* Museum tag (minimal) for 2004–2006 */
+    .museum-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.30);
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.05);
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: background 0.3s;
-    }
-    .bullet li:hover { background: rgba(255,255,255,0.06); }
-    .bullet li i { color: var(--accent); font-size: 14px; }
-    .bullet li div strong { display: block; color: #fff; font-size: 0.9em; letter-spacing: 0.05em; text-transform: uppercase;}
-
-    /* Top Navigation */
-    .topbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      padding: 20px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      mix-blend-mode: difference; /* Стильный эффект наложения на фон */
-    }
-    .brand {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 24px;
-      letter-spacing: 0.1em;
-      color: #fff;
-    }
-    .back-btn {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
+      font-size: 11px;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: #fff;
-      text-decoration: none;
-      border: 1px solid #fff;
-      padding: 8px 16px;
-      transition: all 0.3s;
+      color: rgba(244,244,246,.90);
+      transform: translateY(8px);
+      opacity: 0;
+      animation: floatUp .8s ease-out forwards;
     }
-    .back-btn:hover { background: #fff; color: #000; }
+    .museum-tag .nums{
+      position:relative;
+      color: rgba(244,244,246,.92);
+      text-shadow: 0 0 0 rgba(220,220,230,0);
+    }
+    /* Silver glow only on digits (subtle) */
+    .museum-tag:hover .nums{
+      text-shadow:
+        0 0 16px rgba(220,220,230,.26),
+        0 0 30px rgba(220,220,230,.14);
+    }
 
-    /* Lang Switcher */
-    .lang-switch { display: flex; gap: 5px; }
-    .lang-btn {
-      background: none; border: none;
-      color: var(--muted);
-      font-family: 'JetBrains Mono', monospace;
+    /* Silver underline (premium museum line) */
+    .silver-underline{
+      height: 1px;
+      width: 100%;
+      margin: 14px 0 10px;
+      background: linear-gradient(90deg,
+        rgba(220,220,230,0),
+        rgba(220,220,230,.50),
+        rgba(220,220,230,0)
+      );
+      box-shadow: 0 0 18px rgba(220,220,230,.14);
+      opacity: .9;
+    }
+
+    @keyframes floatUp{
+      to{ transform: translateY(0); opacity: 1; }
+    }
+
+    .sub{margin: 10px 0 0; color:var(--muted); max-width: 980px; font-size: 1.02rem}
+    .lead{margin-top:12px; color: rgba(244,244,246,.86); max-width: 980px; font-size: 1.06rem; line-height: 1.65}
+
+    .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(244,244,246,.86);
       font-size: 12px;
-      cursor: pointer;
-      padding: 5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
     }
-    .lang-btn.active { color: #fff; text-decoration: underline; }
+    .tag i{color: rgba(255,69,0,.95)}
 
-    [data-lang] { display: none; }
-    [data-lang].show { display: block; animation: fadeIn 0.5s ease; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(244,244,246,.92);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      cursor:pointer;
+      transition: transform .18s ease, filter .18s ease;
+      text-decoration:none;
+      position:relative;
+      overflow:hidden;
+    }
+    .btn:hover{transform: translateY(-1px);}
+    .btn-primary{
+      border:none;
+      color:#0b0c0f;
+      background: linear-gradient(90deg, var(--orange), var(--orange2));
+    }
 
-    /* Mobile */
-    @media (max-width: 900px) {
-      .side-graffiti { display: none; }
-      h1 { font-size: 3.5rem; }
+    /* Spray hover (subtle) */
+    .btn::after, .tag::after, a.spray::after{
+      content:"";
+      position:absolute;
+      inset:-20px;
+      pointer-events:none;
+      opacity:0;
+      background:
+        radial-gradient(7px 7px at 25% 30%, rgba(255,69,0,.55), transparent 70%),
+        radial-gradient(6px 6px at 70% 20%, rgba(255,69,0,.45), transparent 70%),
+        radial-gradient(8px 8px at 80% 65%, rgba(255,69,0,.35), transparent 70%),
+        radial-gradient(5px 5px at 35% 75%, rgba(255,255,255,.12), transparent 70%);
+      filter: blur(.45px);
+      transform: scale(.92);
+      transition: opacity .25s ease, transform .35s ease;
+    }
+    .btn:hover::after, .tag:hover::after, a.spray:hover::after{ opacity:.9; transform: scale(1); }
+
+    /* “Museum nav” inside the page */
+    .museum-nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 14px;
+    }
+    .museum-nav a{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      font-size: 12px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color: rgba(244,244,246,.86);
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+    }
+    .museum-nav a i{color: rgba(255,69,0,.95)}
+    .museum-nav a:hover{border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.05)}
+    .museum-nav a::after{ /* spray */ content:""; position:absolute; inset:-20px; pointer-events:none; opacity:0;
+      background:
+        radial-gradient(7px 7px at 25% 30%, rgba(255,69,0,.55), transparent 70%),
+        radial-gradient(6px 6px at 70% 20%, rgba(255,69,0,.45), transparent 70%),
+        radial-gradient(8px 8px at 80% 65%, rgba(255,69,0,.35), transparent 70%),
+        radial-gradient(5px 5px at 35% 75%, rgba(255,255,255,.12), transparent 70%);
+      filter: blur(.45px); transform: scale(.92);
+      transition: opacity .25s ease, transform .35s ease;
+    }
+    .museum-nav a:hover::after{opacity:.85; transform: scale(1);}
+
+    /* Long text */
+    .content{line-height: 1.75; font-size: 1.02rem; color: rgba(244,244,246,.88);}
+    .content .kicker{
+      font-family: "Bebas Neue", Inter, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(244,244,246,.92);
+      font-size: 1.7rem;
+      margin: 0 0 8px;
+    }
+    .content h3{
+      margin: 18px 0 10px;
+      font-size: 1.06rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(244,244,246,.92);
+    }
+
+    .bullet{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .bullet li{
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .bullet li i{color: var(--orange); margin-top:2px}
+
+    .divider{height:1px; background: rgba(255,255,255,.10); margin: 18px 0;}
+
+    /* Tracks Archive */
+    .tracks-grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .track-card{
+      grid-column: span 6;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 14px;
+      overflow:hidden;
+    }
+    .track-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-bottom: 10px;
+    }
+    .track-title{
+      font-weight: 800;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .track-badges{display:flex; gap:8px; flex-wrap:wrap;}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      font-size: 11px;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+      color: rgba(244,244,246,.86);
+      position:relative;
+      overflow:hidden;
+    }
+    .badge i{color: rgba(255,69,0,.92)}
+    .badge:hover{background: rgba(255,255,255,.05)}
+    .badge::after{ /* spray */ content:""; position:absolute; inset:-20px; pointer-events:none; opacity:0;
+      background:
+        radial-gradient(7px 7px at 25% 30%, rgba(255,69,0,.55), transparent 70%),
+        radial-gradient(6px 6px at 70% 20%, rgba(255,69,0,.45), transparent 70%),
+        radial-gradient(8px 8px at 80% 65%, rgba(255,69,0,.35), transparent 70%),
+        radial-gradient(5px 5px at 35% 75%, rgba(255,255,255,.12), transparent 70%);
+      filter: blur(.45px); transform: scale(.92);
+      transition: opacity .25s ease, transform .35s ease;
+    }
+    .badge:hover::after{opacity:.85; transform: scale(1);}
+
+    .sc-embed{
+      border-radius: 14px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.15);
+    }
+    .sc-embed iframe{width:100%; height: 166px; border:0; display:block;}
+
+    /* Timeline */
+    .timeline{
+      position:relative;
+      margin-top: 10px;
+      padding-left: 18px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg,
+        rgba(220,220,230,.12),
+        rgba(220,220,230,.35),
+        rgba(220,220,230,.12)
+      );
+      box-shadow: 0 0 18px rgba(220,220,230,.10);
+    }
+    .t-item{
+      position:relative;
+      padding: 12px 14px;
+      margin: 10px 0;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .t-item::before{
+      content:"";
+      position:absolute;
+      left: -18px;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(220,220,230,.55);
+      box-shadow: 0 0 22px rgba(220,220,230,.20);
+      border: 1px solid rgba(255,255,255,.22);
+    }
+    .t-year{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family: "Bebas Neue", Inter, sans-serif;
+      letter-spacing:.18em;
+      text-transform: uppercase;
+      color: rgba(244,244,246,.92);
+      font-size: 1.2rem;
+    }
+    .t-year i{color: rgba(255,69,0,.95)}
+    .t-text{margin-top:6px; color: rgba(244,244,246,.84);}
+
+    /* Language blocks */
+    [data-lang]{display:none}
+    [data-lang].show{display:block}
+
+    /* Footer */
+    footer{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 0 16px 26px;
+      color: rgba(244,244,246,.58);
+      border-top: 1px solid rgba(255,255,255,.08);
+      position:relative;
+      z-index:2;
+    }
+    footer p{margin: 18px 0 0; font-size: 12px; letter-spacing:.10em; text-transform:uppercase;}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .side-graffiti{ display:none; }
+      section{ padding-left: 16px; padding-right: 16px; }
+      .track-card{grid-column: 1 / -1;}
+      .right{gap:10px}
+    }
+    @media (max-width: 520px){
+      section{padding: 54px 14px;}
+      .topbar{padding: 12px 12px}
+      .brand .t{font-size: 20px}
+      .pill{padding: 7px 10px}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .btn::after, .tag::after, a.spray::after, .museum-tag{animation:none; transition:none;}
     }
   </style>
 </head>
 
 <body>
-
-  <div class="side-graffiti">
-    <img class="left" src="/graffiti-silver-crown.png" alt="">
-    <img class="right" src="/graffiti-pavlograd.png" alt="">
+  <!-- Side graffiti: 2 separate files -->
+  <div class="side-graffiti" aria-hidden="true">
+    <img class="left"  src="/graffiti-silver-crown.png" alt="" loading="lazy" decoding="async">
+    <img class="right" src="/graffiti-pavlograd.png"     alt="" loading="lazy" decoding="async">
   </div>
 
-  <nav class="topbar">
-    <div class="brand">TAYMAY <span style="font-size:12px; opacity:0.6; letter-spacing:0.3em;">OFFICIAL</span></div>
-    <div style="display:flex; align-items:center; gap:20px;">
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btn-ru">RU</button>
-        <button class="lang-btn" id="btn-en">EN</button>
+  <div class="wrap" id="top">
+    <header class="topbar" role="banner">
+      <div class="brand" aria-label="TAYMAY brand">
+        <div class="t">TAYMAY</div>
+        <div class="o">official</div>
       </div>
-      <a href="/index.html" class="back-btn">Назад</a>
-    </div>
-  </nav>
 
-  <div class="wrap">
-    <section>
-      <article class="card">
-        
-        <h1>Silver Crown<br><span style="font-size:0.5em; opacity:0.8; letter-spacing:0.2em; font-family:'Inter'; font-weight:300; text-transform:none; text-shadow:none;">Legacy 2004–2006</span></h1>
+      <div class="right">
+        <div class="pill active" id="btn-ru" role="button" tabindex="0">RU</div>
+        <div class="pill" id="btn-en" role="button" tabindex="0">EN</div>
 
-        <div class="meta">
-          <span class="tag"><i class="fa-solid fa-location-arrow"></i> Pavlograd, UA</span>
-          <span class="tag"><i class="fa-regular fa-clock"></i> 2004–2006</span>
-          <span class="tag"><i class="fa-solid fa-compact-disc"></i> Hip-Hop Archive</span>
+        <a class="btn btn-primary" href="/index.html#top" aria-label="Back to TAYMAY Official">
+          <i class="fa-solid fa-arrow-left"></i> Назад
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="grid">
+          <article class="card" style="grid-column: 1 / -1; border-color: rgba(255,69,0,.18);">
+            <div class="pad">
+
+              <div class="hero-head">
+                <h1>Silver Crown — Начало</h1>
+
+                <div class="museum-tag" title="Era tag">
+                  <i class="fa-solid fa-record-vinyl"></i>
+                  <span class="nums">2004–2006</span>
+                </div>
+              </div>
+
+              <div class="silver-underline" aria-hidden="true"></div>
+
+              <!-- “Museum” quick nav -->
+              <div class="museum-nav" aria-label="Museum navigation">
+                <a href="#overview"><i class="fa-solid fa-circle-info"></i><span>Overview</span></a>
+                <a href="#timeline"><i class="fa-solid fa-timeline"></i><span>Timeline</span></a>
+                <a href="#tracks"><i class="fa-solid fa-microphone-lines"></i><span>Tracks Archive</span></a>
+                <a href="/lyrics-texts.html" title="Lyrics & Texts"><i class="fa-solid fa-pen-nib"></i><span>Lyrics</span></a>
+              </div>
+
+              <!-- Top tags as clickable “buttons” -->
+              <div class="meta" aria-label="Top tags">
+                <a class="tag spray" href="https://ru.wikipedia.org/wiki/Павлоград" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-location-dot"></i>Pavlohrad
+                </a>
+
+                <a class="tag spray" href="https://uk.wikipedia.org/wiki/Український_хіп-хоп" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-record-vinyl"></i>Hip-Hop Archive
+                </a>
+
+                <a class="tag spray" href="/index.html#legacy" title="Back to TAYMAY Legacy">
+                  <i class="fa-solid fa-house"></i>TAYMAY Legacy
+                </a>
+
+                <a class="tag spray" href="/street-clan.html" title="Street Clan page">
+                  <i class="fa-solid fa-users"></i>Street Clan
+                </a>
+
+                <a class="tag spray" href="https://genius.com/TAYMAY_original" target="_blank" rel="noopener" title="Genius">
+                  <i class="fa-solid fa-microphone"></i>Genius
+                </a>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- RU -->
+              <div id="overview" data-lang="ru" class="show content">
+                <div class="kicker">группа Silver Crown и творческая деятельность 2003–2006</div>
+
+                <h3>Начало пути и формирование состава</h3>
+                <p class="lead">
+                  Творческая деятельность TAYMAY началась в 2003 году, когда он впервые вышел на сцену с авторским материалом под псевдонимом MC STAN.
+                  В конце 2004 года была сформирована рэп-группа Silver Crown, в первоначальный состав которой вошли:
+                </p>
+                <ul class="bullet">
+                  <li><i class="fa-solid fa-user"></i><div><strong>MC STAN</strong> Роман Рябко</div></li>
+                  <li><i class="fa-solid fa-user"></i><div><strong>STUFF</strong> Егор</div></li>
+                  <li><i class="fa-solid fa-user"></i><div><strong>ToL</strong> Владимир</div></li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <h3>Ранние записи</h3>
+                <p class="lead">
+                  Одним из первых знаковых треков коллектива стала композиция «Мне надо бежать», записанная совместно с ToL в 2004–2005 годах в домашних условиях.
+                  Позже, в сотрудничестве со вторым участником группы, STUFF Егором, были выпущены песни «Voice» и «Любовь за деньги».
+                </p>
+
+                <div class="divider"></div>
+
+                <h3>Коллаборация с Викторией Олизе</h3>
+                <p class="lead">
+                  В период с 2005 по 2006 году группа записала совместную песню «Любовь» с тогда еще начинающей певицей Викторией Олизе,
+                  будущей участницей шоу «Голос» и известной джазовой исполнительницей.
+                  Сотрудничество стало возможным благодаря давнему знакомству родителей Романа и Виктории.
+                </p>
+
+                <div class="divider"></div>
+
+                <h3>Признание в прессе и социальные выступления</h3>
+                <p class="lead">
+                  В 2006 году деятельность группы была освещена в региональной прессе — в газете «Западный Донбасс» вышла статья, посвященная Silver Crown.
+                  В этот же период MC STAN вел активную сольную деятельность.
+                  Одним из наиболее резонансных моментов стало выступление в Павлоградской исправительной колонии №142, приуроченное к празднованию Дня украинской вышиванки.
+                  Роман исполнил остросоциальные и личные композиции «Отец» и «Золотая молодежь».
+                  Это событие имело продолжение в личной жизни артиста: именно там он встретил друга детства Александра,
+                  который спустя 10 лет совершил ограбление квартиры дедушки Романа в Павлограде.
+                </p>
+
+                <ul class="bullet" aria-label="Public performances">
+                  <li><i class="fa-solid fa-city"></i><div><strong>День города</strong> Ежегодные выступления на главных площадках Павлограда перед многотысячной аудиторией.</div></li>
+                  <li><i class="fa-solid fa-flag"></i><div><strong>Общегородские фестивали</strong> Участие в сборных концертах, посвященных молодежным и государственным праздникам.</div></li>
+                  <li><i class="fa-solid fa-school"></i><div><strong>Образовательные учреждения</strong> Выступления на школьных и межшкольных мероприятиях, которые способствовали популяризации хип-хоп культуры среди молодежи города.</div></li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <p class="lead">
+                  Благодаря такой активности, к 2006 году группа стала узнаваемым коллективом в регионе, что и привело к появлению публикаций в прессе,
+                  в частности в газете «Западный Донбасс».
+                </p>
+              </div>
+
+              <!-- EN -->
+              <div data-lang="en" class="content">
+                <div class="kicker">Silver Crown Group and Creative Activity 2003–2006</div>
+
+                <h3>Origins and Formation</h3>
+                <p class="lead">
+                  TAYMAY’s creative journey began in 2003 when he first performed original material under the stage name MC STAN.
+                  At the end of 2004, the rap group Silver Crown was formed. The original lineup included:
+                </p>
+                <ul class="bullet">
+                  <li><i class="fa-solid fa-user"></i><div><strong>MC STAN</strong> — Roman Riabko</div></li>
+                  <li><i class="fa-solid fa-user"></i><div><strong>STUFF</strong> — Egor</div></li>
+                  <li><i class="fa-solid fa-user"></i><div><strong>ToL</strong> — Vladimir</div></li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <h3>Early Recordings</h3>
+                <p class="lead">
+                  One of the group’s first significant tracks was “I Need to Run” (Mne nado bezhat), recorded at home with ToL in 2004–2005.
+                  Later, in collaboration with STUFF — Egor, the songs “Voice” and “Love for Money” were released.
+                </p>
+
+                <div class="divider"></div>
+
+                <h3>Collaboration with Victoria Olize</h3>
+                <p class="lead">
+                  Between 2005 and 2006, the group recorded the song “Love” (Lyubov) with then-emerging singer Victoria Olize —
+                  a future participant of “The Voice” and a renowned jazz performer.
+                  The collaboration was possible due to the long-standing friendship between Roman’s and Victoria’s parents.
+                </p>
+
+                <div class="divider"></div>
+
+                <h3>Media Recognition and Social Performances</h3>
+                <p class="lead">
+                  In 2006, the group’s activities were covered by the regional press, with an article dedicated to Silver Crown appearing in the “Zapadnyi Donbass” newspaper.
+                  During this period, MC STAN also pursued active solo work.
+                  One of the most resonant moments was a performance at Pavlohrad Correctional Colony No. 142 during the Ukrainian Vyshyvanka Day celebrations.
+                  Roman performed socially-charged personal tracks “Father” and “Golden Youth.”
+                  This event had a profound impact on his life: it was there he encountered a childhood friend, Alexander,
+                  who 10 years later committed a robbery at Roman’s grandfather’s apartment in Pavlohrad.
+                </p>
+
+                <h3>Public Performances</h3>
+                <ul class="bullet">
+                  <li><i class="fa-solid fa-city"></i><div><strong>City Day</strong> Annual performances on Pavlohrad’s main stages for audiences of thousands.</div></li>
+                  <li><i class="fa-solid fa-flag"></i><div><strong>Citywide Festivals</strong> Participation in concerts dedicated to youth and national holidays.</div></li>
+                  <li><i class="fa-solid fa-school"></i><div><strong>Educational Institutions</strong> Performances at school events that helped popularize hip-hop culture among the city’s youth.</div></li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <p class="lead">
+                  By 2006, the group had become a well-known collective in the region, leading to several press features — specifically in the “Zapadnyi Donbass” newspaper.
+                </p>
+              </div>
+
+              <!-- Timeline -->
+              <div class="divider"></div>
+              <div id="timeline">
+                <div class="kicker" style="margin-top:4px;">timeline 2003 → 2006</div>
+
+                <div data-lang="ru" class="show timeline" aria-label="Timeline RU">
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-flag-checkered"></i>2003</div>
+                    <div class="t-text">Первые выступления MC STAN. Павлоград. Формирование авторского стиля.</div>
+                  </div>
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-users"></i>2004</div>
+                    <div class="t-text">Формирование Silver Crown. Старт ранних домашних записей.</div>
+                  </div>
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-microphone-lines"></i>2005</div>
+                    <div class="t-text">Развитие материала: «Voice», «Любовь за деньги». Период активных репетиций.</div>
+                  </div>
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-newspaper"></i>2006</div>
+                    <div class="t-text">Публикация в «Западный Донбасс». Социальные выступления и заметный резонанс.</div>
+                  </div>
+                </div>
+
+                <div data-lang="en" class="timeline" aria-label="Timeline EN">
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-flag-checkered"></i>2003</div>
+                    <div class="t-text">First performances as MC STAN. Pavlohrad. Authorial style takes shape.</div>
+                  </div>
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-users"></i>2004</div>
+                    <div class="t-text">Silver Crown is formed. Early home-recording era begins.</div>
+                  </div>
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-microphone-lines"></i>2005</div>
+                    <div class="t-text">Material expands: “Voice”, “Love for Money”. Intensive writing and rehearsal.</div>
+                  </div>
+                  <div class="t-item">
+                    <div class="t-year"><i class="fa-solid fa-newspaper"></i>2006</div>
+                    <div class="t-text">Press coverage in “Zapadnyi Donbass”. Social performances and public resonance.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tracks Archive -->
+              <div class="divider"></div>
+              <div id="tracks">
+                <div class="kicker">tracks archive</div>
+
+                <div data-lang="ru" class="show sub" style="margin-top:6px;">
+                  Живые ссылки и проигрыватели SoundCloud. (Если хочешь — добавим Bandcamp-версии карточками рядом.)
+                </div>
+                <div data-lang="en" class="sub" style="margin-top:6px;">
+                  Live links + SoundCloud embeds. (If you want, we’ll add Bandcamp versions side-by-side.)
+                </div>
+
+                <div class="tracks-grid" style="margin-top:14px;">
+                  <!-- 1 -->
+                  <div class="track-card">
+                    <div class="track-head">
+                      <div>
+                        <div class="track-title"><i class="fa-solid fa-record-vinyl" style="color:rgba(255,69,0,.92)"></i> Silver Crown — Gotta Run / Мне надо бежать</div>
+                        <div class="sub" style="margin-top:6px;">Archive era: 2004–2005</div>
+                      </div>
+                      <div class="track-badges">
+                        <a class="badge" target="_blank" rel="noopener"
+                           href="https://soundcloud.com/taymay-a-k-a-mc-stan/silver-crown-gotta-run-mne">
+                          <i class="fa-brands fa-soundcloud"></i>SoundCloud
+                        </a>
+                        <a class="badge" href="/lyrics-texts.html#gotta-run"><i class="fa-solid fa-pen-nib"></i>Lyrics</a>
+                      </div>
+                    </div>
+                    <div class="sc-embed" aria-label="SoundCloud embed">
+                      <iframe loading="lazy"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/taymay-a-k-a-mc-stan/silver-crown-gotta-run-mne&color=%23ff4500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="track-card">
+                    <div class="track-head">
+                      <div>
+                        <div class="track-title"><i class="fa-solid fa-microphone-lines" style="color:rgba(255,69,0,.92)"></i> Silver Crown — Любовь за деньги / Money for Love</div>
+                        <div class="sub" style="margin-top:6px;">Archive era: 2005</div>
+                      </div>
+                      <div class="track-badges">
+                        <a class="badge" target="_blank" rel="noopener"
+                           href="https://soundcloud.com/taymay-a-k-a-mc-stan/lyubov-za-dengi-money-for-love">
+                          <i class="fa-brands fa-soundcloud"></i>SoundCloud
+                        </a>
+                        <a class="badge" href="/lyrics-texts.html#money-for-love"><i class="fa-solid fa-pen-nib"></i>Lyrics</a>
+                      </div>
+                    </div>
+                    <div class="sc-embed">
+                      <iframe loading="lazy"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/taymay-a-k-a-mc-stan/lyubov-za-dengi-money-for-love&color=%23ff4500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <!-- 3 -->
+                  <div class="track-card">
+                    <div class="track-head">
+                      <div>
+                        <div class="track-title"><i class="fa-solid fa-compact-disc" style="color:rgba(255,69,0,.92)"></i> Silver Crown — Love</div>
+                        <div class="sub" style="margin-top:6px;">Collaboration era: 2005–2006</div>
+                      </div>
+                      <div class="track-badges">
+                        <a class="badge" target="_blank" rel="noopener"
+                           href="https://soundcloud.com/taymay-a-k-a-mc-stan/love">
+                          <i class="fa-brands fa-soundcloud"></i>SoundCloud
+                        </a>
+                        <a class="badge" href="/lyrics-texts.html#love"><i class="fa-solid fa-pen-nib"></i>Lyrics</a>
+                      </div>
+                    </div>
+                    <div class="sc-embed">
+                      <iframe loading="lazy"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/taymay-a-k-a-mc-stan/love&color=%23ff4500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <!-- 4 -->
+                  <div class="track-card">
+                    <div class="track-head">
+                      <div>
+                        <div class="track-title"><i class="fa-solid fa-heart" style="color:rgba(255,69,0,.92)"></i> TAYMAY / Stan — Отец / Father</div>
+                        <div class="sub" style="margin-top:6px;">First recorded track (SoundCloud archive)</div>
+                      </div>
+                      <div class="track-badges">
+                        <a class="badge" target="_blank" rel="noopener"
+                           href="https://soundcloud.com/taymay-a-k-a-mc-stan/taymay-stan-otecz-father">
+                          <i class="fa-brands fa-soundcloud"></i>SoundCloud
+                        </a>
+                        <a class="badge" href="/lyrics-texts.html#father"><i class="fa-solid fa-pen-nib"></i>Lyrics</a>
+                      </div>
+                    </div>
+                    <div class="sc-embed">
+                      <iframe loading="lazy"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/taymay-a-k-a-mc-stan/taymay-stan-otecz-father&color=%23ff4500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="meta" style="margin-top:14px;">
+                  <a class="tag spray" href="https://taymay1.bandcamp.com/" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-bandcamp"></i>Bandcamp
+                  </a>
+                  <a class="tag spray" href="https://soundcloud.com/taymay-a-k-a-mc-stan" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-soundcloud"></i>SoundCloud Profile
+                  </a>
+                  <a class="tag spray" href="/lyrics-texts.html">
+                    <i class="fa-solid fa-pen-nib"></i>Lyrics & Texts
+                  </a>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- Internal linking block (hub feeling) -->
+              <div class="kicker" style="margin:0 0 8px;">internal links</div>
+              <div class="meta" aria-label="Internal links">
+                <a class="tag spray" href="/index.html#top"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="tag spray" href="/index.html#legacy"><i class="fa-solid fa-timeline"></i>Legacy</a>
+                <a class="tag spray" href="/street-clan.html"><i class="fa-solid fa-users"></i>Street Clan</a>
+                <a class="tag spray" href="/silver-crown.html#tracks"><i class="fa-solid fa-microphone-lines"></i>Tracks</a>
+                <a class="tag spray" href="/lyrics-texts.html"><i class="fa-solid fa-pen-nib"></i>Lyrics</a>
+              </div>
+
+            </div>
+          </article>
         </div>
+      </section>
+    </main>
 
-        <div class="divider"></div>
-
-        <div data-lang="ru" class="content show">
-          <p class="lead">
-            Это был период становления, когда хип-хоп был не индустрией, а образом жизни. 
-            <strong>Silver Crown</strong> — это капсула времени павлоградского андеграунда середины нулевых.
-          </p>
-
-          <h3>01 / Состав и Старт</h3>
-          <p>В конце 2004 года была сформирована основа группы. Трио, которое задало вектор движения:</p>
-          <ul class="bullet">
-            <li><i class="fa-solid fa-user-astronaut"></i> <div><strong>MC STAN</strong> (Роман Рябко)</div></li>
-            <li><i class="fa-solid fa-user-ninja"></i> <div><strong>STUFF</strong> (Егор)</div></li>
-            <li><i class="fa-solid fa-user-secret"></i> <div><strong>ToL</strong> (Владимир)</div></li>
-          </ul>
-
-          <h3>02 / Ключевые Треки</h3>
-          <p>Записи велись в домашних условиях, но именно этот "сырой" звук создавал ту самую атмосферу.</p>
-          <ul class="bullet">
-            <li><i class="fa-solid fa-music"></i> <div><strong>«Мне надо бежать»</strong> (feat. ToL)</div></li>
-            <li><i class="fa-solid fa-music"></i> <div><strong>«Любовь за деньги»</strong> (feat. STUFF)</div></li>
-            <li><i class="fa-solid fa-music"></i> <div><strong>«Voice»</strong> (feat. STUFF)</div></li>
-          </ul>
-          
-          <h3>03 / Коллаборация</h3>
-          <p>
-             Особенным моментом стала работа с <strong>Викторией Олизе</strong> (будущей звездой джаза и шоу «Голос»).
-             Совместный трек «Любовь» показал лирическую сторону улицы.
-          </p>
-
-          <div class="divider"></div>
-          
-          <h3>04 / Социальный Импульс</h3>
-          <p>
-            2006 год запомнился не только статьями в газете «Западный Донбасс», но и жестким социальным контекстом. 
-            Выступление MC STAN в <strong>Исправительной колонии №142</strong> стало проверкой на прочность.
-          </p>
-          <p style="font-size: 0.9em; opacity: 0.6; border-left: 2px solid #555; padding-left: 10px;">
-            Там прозвучали треки «Отец» и «Золотая молодежь». Ирония судьбы: именно там Роман встретил друга детства, 
-            который спустя 10 лет совершил ограбление квартиры его семьи.
-          </p>
-        </div>
-
-        <div data-lang="en" class="content">
-          <p class="lead">
-            This was the formative era when hip-hop was a lifestyle, not an industry.
-            <strong>Silver Crown</strong> stands as a time capsule of the Pavlograd underground in the mid-2000s.
-          </p>
-
-          <h3>01 / Lineup & Origins</h3>
-          <p>The group's foundation was laid in late 2004. A trio that set the movement's vector:</p>
-          <ul class="bullet">
-            <li><i class="fa-solid fa-user-astronaut"></i> <div><strong>MC STAN</strong> (Roman Riabko)</div></li>
-            <li><i class="fa-solid fa-user-ninja"></i> <div><strong>STUFF</strong> (Egor)</div></li>
-            <li><i class="fa-solid fa-user-secret"></i> <div><strong>ToL</strong> (Vladimir)</div></li>
-          </ul>
-
-          <h3>02 / Key Tracks</h3>
-          <p>Recorded in home studios, the raw sound crafted a unique authentic atmosphere.</p>
-          <ul class="bullet">
-            <li><i class="fa-solid fa-music"></i> <div><strong>"I Need to Run"</strong> (feat. ToL)</div></li>
-            <li><i class="fa-solid fa-music"></i> <div><strong>"Love for Money"</strong> (feat. STUFF)</div></li>
-            <li><i class="fa-solid fa-music"></i> <div><strong>"Voice"</strong> (feat. STUFF)</div></li>
-          </ul>
-          
-          <h3>03 / Collaboration</h3>
-          <p>
-             A highlight was the collaboration with <strong>Victoria Olize</strong> (future jazz star and "The Voice" participant).
-             The track "Love" revealed the lyrical side of the streets.
-          </p>
-
-          <div class="divider"></div>
-          
-          <h3>04 / Social Impact</h3>
-          <p>
-            2006 was marked not only by press coverage in "Zapadnyi Donbass" but by harsh social context.
-            MC STAN's performance at <strong>Correctional Colony No. 142</strong> was a true test of character.
-          </p>
-        </div>
-
-      </article>
-    </section>
+    <footer>
+      <p>Pavlograd Hip-Hop Heritage</p>
+    </footer>
   </div>
 
   <script>
+    // Language toggle
     const btnRU = document.getElementById('btn-ru');
     const btnEN = document.getElementById('btn-en');
-    const blocksRU = document.querySelector('[data-lang="ru"]');
-    const blocksEN = document.querySelector('[data-lang="en"]');
+    const blocksRU = Array.from(document.querySelectorAll('[data-lang="ru"]'));
+    const blocksEN = Array.from(document.querySelectorAll('[data-lang="en"]'));
 
     function setLang(lang){
       if(lang === 'ru'){
-        blocksRU.classList.add('show');
-        blocksEN.classList.remove('show');
+        blocksRU.forEach(b=>b.classList.add('show'));
+        blocksEN.forEach(b=>b.classList.remove('show'));
         btnRU.classList.add('active');
         btnEN.classList.remove('active');
+        document.documentElement.lang = 'ru';
       } else {
-        blocksEN.classList.add('show');
-        blocksRU.classList.remove('show');
+        blocksEN.forEach(b=>b.classList.add('show'));
+        blocksRU.forEach(b=>b.classList.remove('show'));
         btnEN.classList.add('active');
         btnRU.classList.remove('active');
+        document.documentElement.lang = 'en';
       }
     }
 
     btnRU.addEventListener('click', ()=>setLang('ru'));
     btnEN.addEventListener('click', ()=>setLang('en'));
+    btnRU.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') setLang('ru'); });
+    btnEN.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') setLang('en'); });
+
+    // Smooth scroll for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
   </script>
 </body>
 </html>
+
 
