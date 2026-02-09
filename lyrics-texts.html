@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyrics & Texts | Silver Crown Archive</title>
+  <meta name="description" content="Lyrics & Texts archive for Silver Crown era. Cross-links to Genius. RU/EN." />
+  <link rel="canonical" href="https://taymay-official.vercel.app/lyrics-texts.html" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="theme-color" content="#0a0a0c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <style>
+    :root{
+      --bg:#0a0a0c; --bg2:#0f0f13;
+      --text:#f4f4f6; --muted:rgba(244,244,246,.72);
+      --glass:rgba(18,18,22,.62); --glass2:rgba(18,18,22,.42);
+      --orange:#FF4500; --orange2:#ff6b3a;
+      --shadow: 0 18px 70px rgba(0,0,0,.45);
+      --radius: 18px; --max: 980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(255,69,0,.10), transparent 55%),
+        radial-gradient(900px 600px at 10% 10%, rgba(255,69,0,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      opacity:.10; mix-blend-mode:overlay; z-index:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      background-size:180px 180px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{position:relative; z-index:1}
+
+    .topbar{
+      position:fixed; top:0; left:0; right:0;
+      z-index:50;
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 16px;
+      backdrop-filter: blur(14px);
+      background: rgba(10,10,12,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:2px;
+      font-family:"Bebas Neue", Inter, sans-serif;
+      letter-spacing:.18em; text-transform:uppercase; line-height:1;
+    }
+    .brand .t{font-size:22px}
+    .brand .o{font-size:12px; letter-spacing:.22em; opacity:.8}
+    .right{display:flex; gap:12px; align-items:center; flex-wrap:wrap;}
+
+    .pill{
+      display:inline-flex; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill.active{border-color: rgba(255,69,0,.55); background: rgba(255,69,0,.10);}
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      position:relative; overflow:hidden;
+    }
+    .btn-primary{border:none; color:#0b0c0f; background: linear-gradient(90deg, var(--orange), var(--orange2));}
+    .btn::after{
+      content:""; position:absolute; inset:-20px; opacity:0; pointer-events:none;
+      background:
+        radial-gradient(7px 7px at 25% 30%, rgba(255,69,0,.55), transparent 70%),
+        radial-gradient(6px 6px at 70% 20%, rgba(255,69,0,.45), transparent 70%),
+        radial-gradient(8px 8px at 80% 65%, rgba(255,69,0,.35), transparent 70%),
+        radial-gradient(5px 5px at 35% 75%, rgba(255,255,255,.12), transparent 70%);
+      filter: blur(.45px); transform: scale(.92);
+      transition: opacity .25s ease, transform .35s ease;
+    }
+    .btn:hover::after{opacity:.85; transform: scale(1);}
+
+    main{padding-top:84px; padding-bottom:40px;}
+    section{max-width: var(--max); margin:0 auto; padding: 60px 16px;}
+
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, var(--glass), var(--glass2));
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(520px 320px at 15% 12%, rgba(255,69,0,.12), transparent 60%);
+      opacity:.85; pointer-events:none;
+    }
+    .card > *{position:relative; z-index:1}
+    .pad{padding:22px 22px;}
+
+    h1{
+      margin:0;
+      font-family:"Bebas Neue", Inter, sans-serif;
+      font-size: clamp(2.0rem, 3.2vw, 3.0rem);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      line-height:1;
+    }
+    .sub{margin:10px 0 0; color:var(--muted);}
+
+    .kicker{
+      margin-top: 14px;
+      font-family:"Bebas Neue", Inter, sans-serif;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-size: 1.6rem;
+    }
+
+    .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+      position:relative; overflow:hidden;
+    }
+    .tag i{color: rgba(255,69,0,.92);}
+    .tag::after{
+      content:""; position:absolute; inset:-20px; opacity:0; pointer-events:none;
+      background:
+        radial-gradient(7px 7px at 25% 30%, rgba(255,69,0,.55), transparent 70%),
+        radial-gradient(6px 6px at 70% 20%, rgba(255,69,0,.45), transparent 70%),
+        radial-gradient(8px 8px at 80% 65%, rgba(255,69,0,.35), transparent 70%),
+        radial-gradient(5px 5px at 35% 75%, rgba(255,255,255,.12), transparent 70%);
+      filter: blur(.45px); transform: scale(.92);
+      transition: opacity .25s ease, transform .35s ease;
+    }
+    .tag:hover::after{opacity:.85; transform: scale(1);}
+
+    .divider{height:1px; background: rgba(255,255,255,.10); margin: 18px 0;}
+
+    .lyrics{
+      white-space: pre-wrap;
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      padding: 14px 14px;
+      color: rgba(244,244,246,.86);
+      line-height: 1.75;
+      margin: 10px 0 0;
+      font-size: 0.98rem;
+    }
+
+    [data-lang]{display:none}
+    [data-lang].show{display:block}
+
+    @media (max-width: 520px){
+      section{padding: 54px 14px;}
+      .topbar{padding: 12px 12px}
+      .brand .t{font-size: 20px}
+      .pill{padding: 7px 10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="top">
+    <header class="topbar" role="banner">
+      <div class="brand">
+        <div class="t">TAYMAY</div>
+        <div class="o">official</div>
+      </div>
+
+      <div class="right">
+        <div class="pill active" id="btn-ru" role="button" tabindex="0">RU</div>
+        <div class="pill" id="btn-en" role="button" tabindex="0">EN</div>
+
+        <a class="btn" href="/silver-crown.html#tracks"><i class="fa-solid fa-arrow-left"></i>Back to Archive</a>
+        <a class="btn btn-primary" href="/index.html#top"><i class="fa-solid fa-house"></i>Home</a>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <article class="card">
+          <div class="pad">
+            <h1>Lyrics & Texts</h1>
+            <p class="sub" data-lang="ru" class="show">Архив текстов и перекрёстные ссылки на Genius.</p>
+            <p class="sub" data-lang="en">Texts archive + cross-links to Genius.</p>
+
+            <div class="meta">
+              <a class="tag" href="https://genius.com/TAYMAY_original" target="_blank" rel="noopener">
+                <i class="fa-solid fa-microphone"></i>Genius
+              </a>
+              <a class="tag" href="/silver-crown.html"><i class="fa-solid fa-record-vinyl"></i>Silver Crown</a>
+              <a class="tag" href="/street-clan.html"><i class="fa-solid fa-users"></i>Street Clan</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Track sections with anchors for cross links -->
+            <div id="gotta-run">
+              <div class="kicker">Gotta Run / Мне надо бежать</div>
+              <div class="meta">
+                <a class="tag" href="/silver-crown.html#tracks"><i class="fa-solid fa-play"></i>Listen</a>
+                <a class="tag" href="https://genius.com/TAYMAY_original" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i>Genius Link</a>
+              </div>
+              <div data-lang="ru" class="show">
+                <pre class="lyrics">ВСТАВЬ ТУТ ТЕКСТ (RU)</pre>
+              </div>
+              <div data-lang="en">
+                <pre class="lyrics">PASTE LYRICS HERE (EN)</pre>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="money-for-love">
+              <div class="kicker">Любовь за деньги / Money for Love</div>
+              <div class="meta">
+                <a class="tag" href="/silver-crown.html#tracks"><i class="fa-solid fa-play"></i>Listen</a>
+                <a class="tag" href="https://genius.com/TAYMAY_original" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i>Genius Link</a>
+              </div>
+              <div data-lang="ru" class="show">
+                <pre class="lyrics">ВСТАВЬ ТУТ ТЕКСТ (RU)</pre>
+              </div>
+              <div data-lang="en">
+                <pre class="lyrics">PASTE LYRICS HERE (EN)</pre>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="love">
+              <div class="kicker">Love / Любовь</div>
+              <div class="meta">
+                <a class="tag" href="/silver-crown.html#tracks"><i class="fa-solid fa-play"></i>Listen</a>
+                <a class="tag" href="https://genius.com/TAYMAY_original" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i>Genius Link</a>
+              </div>
+              <div data-lang="ru" class="show">
+                <pre class="lyrics">ВСТАВЬ ТУТ ТЕКСТ (RU)</pre>
+              </div>
+              <div data-lang="en">
+                <pre class="lyrics">PASTE LYRICS HERE (EN)</pre>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="father">
+              <div class="kicker">Отец / Father</div>
+              <div class="meta">
+                <a class="tag" href="/silver-crown.html#tracks"><i class="fa-solid fa-play"></i>Listen</a>
+                <a class="tag" href="https://genius.com/TAYMAY_original" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i>Genius Link</a>
+              </div>
+              <div data-lang="ru" class="show">
+                <pre class="lyrics">ВСТАВЬ ТУТ ТЕКСТ (RU)</pre>
+              </div>
+              <div data-lang="en">
+                <pre class="lyrics">PASTE LYRICS HERE (EN)</pre>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const btnRU = document.getElementById('btn-ru');
+    const btnEN = document.getElementById('btn-en');
+    const blocksRU = Array.from(document.querySelectorAll('[data-lang="ru"]'));
+    const blocksEN = Array.from(document.querySelectorAll('[data-lang="en"]'));
+
+    function setLang(lang){
+      if(lang === 'ru'){
+        blocksRU.forEach(b=>b.classList.add('show'));
+        blocksEN.forEach(b=>b.classList.remove('show'));
+        btnRU.classList.add('active');
+        btnEN.classList.remove('active');
+        document.documentElement.lang = 'ru';
+      } else {
+        blocksEN.forEach(b=>b.classList.add('show'));
+        blocksRU.forEach(b=>b.classList.remove('show'));
+        btnEN.classList.add('active');
+        btnRU.classList.remove('active');
+        document.documentElement.lang = 'en';
+      }
+    }
+    btnRU.addEventListener('click', ()=>setLang('ru'));
+    btnEN.addEventListener('click', ()=>setLang('en'));
+  </script>
+</body>
+</html>
