@@ -546,6 +546,33 @@
     @media (prefers-reduced-motion: reduce){
       .btn::after, .tag::after, a.spray::after, .museum-tag{animation:none; transition:none;}
     }
+    /* ===== SILVER CROWN PREMIUM ===== */
+
+.kicker {
+  text-align: center;
+  font-size: clamp(16px, 2vw, 20px);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  margin-bottom: 24px;
+  color: var(--silver);
+}
+
+.brand-name {
+  font-family: 'Syncopate', sans-serif;
+  letter-spacing: 0.12em;
+  background: linear-gradient(90deg, #ffffff, #dcdce6, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 8px rgba(220,220,230,.25),
+    0 0 18px rgba(220,220,230,.15);
+}
+
+@media (max-width: 900px) {
+  .kicker {
+    white-space: normal;
+  }
+}
   </style>
 </head>
 
@@ -625,7 +652,9 @@
 
               <!-- RU -->
               <div id="overview" data-lang="ru" class="show content">
-                <div class="kicker">группа Silver Crown и творческая деятельность 2003–2006</div>
+                <div class="kicker">
+  группа <span class="brand-name">Silver Crown</span> и творческая деятельность 2003–2006
+</div>
 
                 <h3>Начало пути и формирование состава</h3>
                 <p class="lead">
