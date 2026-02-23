@@ -437,7 +437,26 @@
       text-shadow: 0 6px 28px rgba(255,69,0,.25);
     }
     .hero-title span{display:inline-block; font-family: "Bebas Neue", Inter, sans-serif; font-weight: 900;}
+/* Hero intro animation */
+.hero-title span{
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 0.8s ease forwards;
+}
 
+.hero-title span:nth-child(1){ animation-delay: .1s; }
+.hero-title span:nth-child(2){ animation-delay: .2s; }
+.hero-title span:nth-child(3){ animation-delay: .3s; }
+.hero-title span:nth-child(4){ animation-delay: .4s; }
+.hero-title span:nth-child(5){ animation-delay: .5s; }
+.hero-title span:nth-child(6){ animation-delay: .6s; }
+
+@keyframes heroFade{
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
     h2{
       margin:0 0 14px;
       font-family: "Bebas Neue", Inter, sans-serif;
@@ -500,6 +519,8 @@
       background:
         linear-gradient(180deg, rgba(10,10,12,.12), rgba(10,10,12,.85)),
         url("/banner.jpg") center/cover no-repeat;
+      will-change: transform;
+transition: transform .1s linear;
     }
     .banner::after{
       content:"";
@@ -1137,6 +1158,19 @@ Today TAYMAY is a lyricist & performer creating music <strong>in co-authorship</
         el.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
+    });
+
+// Soft parallax for hero banner
+const banner = document.querySelector('.banner');
+
+if (window.innerWidth > 768) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const offset = Math.min(scrolled * 0.05, 10);
+    banner.style.transform = `translateY(-${offset}px)`;
+  });
+}
+
   </script>
   <meta property="og:locale" content="ru_RU">
 <meta property="og:locale:alternate" content="en_US">
