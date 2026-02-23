@@ -6,10 +6,6 @@
  
   <meta name="keywords" content="TAYMAY, ТАЙМАЙ, Roman Ryabko, Riabko Roman, Роман Рябко, Street Clan, Silver Crown, рэп Ирпень, хип-хоп Павлоград, MC STAN, украинский рэп архив">
 
-<meta property="og:title" content="TAYMAY OFFICIAL ARCHIVE | Street Clan & Silver Crown">
-<meta property="og:description" content="Официальный архив творчества ТАЙМАЙ. История групп Street Clan (Ирпень) и Silver Crown (Павлоград).">
-<meta property="og:image" content="/phoenix-bg.png">
-<meta property="og:url" content="https://taymay-official.vercel.app">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>TAYMAY — официальный сайт</title>
@@ -70,7 +66,10 @@
         "alternateName": "TAYMAY",
         "birthDate": "1988-04-19",
         "birthPlace": {"@type":"Place","name":"Melitopol, Ukraine"},
-        "nationality": "Ukraine",
+        "nationality": {
+  "@type": "Country",
+  "name": "Ukraine"
+},
         "url": "https://taymay-official.vercel.app/",
         "jobTitle": ["Singer-songwriter","Lyricist","Performer"],
         "description": "Автор-исполнитель (singer-songwriter / lyricist & performer). Автор текстов и исполнитель, создающий музыку в соавторстве. Хип-хоп с 2003 года: архивы Hip-Hop.ru, Silver Crown, Street Clan, новый материал и благотворительная миссия.",
@@ -435,6 +434,7 @@
       transform: skewX(-5deg);
       letter-spacing: .22em;
       user-select:none;
+      text-shadow: 0 6px 28px rgba(255,69,0,.25);
     }
     .hero-title span{display:inline-block; font-family: "Bebas Neue", Inter, sans-serif; font-weight: 900;}
 
@@ -1138,6 +1138,8 @@ Today TAYMAY is a lyricist & performer creating music <strong>in co-authorship</
       });
     });
   </script>
+  <meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
 </body>
 </html>
 
