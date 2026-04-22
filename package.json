@@ -1,0 +1,17 @@
+{
+  "name": "taymay-official",
+  "version": "1.0.0",
+  "description": "Official website of TAYMAY — hip-hop artist",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'This is a static HTML site. Open index.html in a browser or use a local server.'",
+    "build": "echo 'No build step required for static HTML site.'",
+    "test": "echo 'No tests configured.'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TAYMAY1/taymay-official.git"
+  },
+  "author": "TAYMAY",
+  "license": "UNLICENSED"
+}
